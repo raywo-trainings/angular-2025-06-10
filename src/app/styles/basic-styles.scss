@@ -109,3 +109,20 @@ main {
 .nav-headline {
   padding-left: 1rem;
 }
+
+.ingredients {
+  list-style-type: none;
+  padding: 1rem;
+
+  li {
+    margin-bottom: 0.5rem;
+  }
+
+  .ingredient {
+    font-weight: 400;
+    display: block;
+  }
+
+  .quantity {
+  }
+}

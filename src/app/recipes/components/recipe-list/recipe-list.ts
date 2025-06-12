@@ -1,10 +1,13 @@
 import {Component, inject} from '@angular/core';
 import {Recipes} from '../../services/recipes';
+import {RouterLink} from '@angular/router';
 
 
 @Component({
   selector: 'app-recipe-list',
-  imports: [],
+  imports: [
+    RouterLink
+  ],
   templateUrl: './recipe-list.html',
   styleUrl: './recipe-list.scss'
 })

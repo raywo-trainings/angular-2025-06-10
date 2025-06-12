@@ -12,6 +12,8 @@
       <div class="card-body">
         <p><strong>Schwierigkeit:</strong> {{ recipe.difficulty }}</p>
         <p><strong>Dauer:</strong> {{ recipe.duration.value }} {{ recipe.duration.unit }}</p>
+
+        <a [routerLink]="['/recipes', recipe.id]">Details</a>
       </div>
     </div>
 
