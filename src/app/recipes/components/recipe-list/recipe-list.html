@@ -2,25 +2,18 @@
 
 <div class="grid-container">
   @for (recipe of recipes; track recipe.id) {
-    <div class="recipe">
-      <h3 class="recipe-header">
-        {{ recipe.name }}
-        <small>{{ recipe.difficulty }}</small>
-      </h3>
-
-      <div class="recipe-body">
-        <h4>Zutaten</h4>
-        <ul>
-          @for (ingredient of recipe.ingredients; track $index) {
-            <li>{{ ingredient.name }}</li>
-          }
-        </ul>
+    <div class="card">
+      <div class="card-header flex-container">
+        <img [src]="recipe.img" alt="Avatarbild für das Rezept" class="card-avatar-img">
+        <h3>{{ recipe.name }}</h3>
       </div>
+      <img src="{{ recipe.img }}" alt="{{ recipe.name }}">
 
-      <div class="recipe-body">
-        <h4>Zubereitung</h4>
-        {{ recipe.preparation }}
+      <div class="card-body">
+        <p><strong>Schwierigkeit:</strong> {{ recipe.difficulty }}</p>
+        <p><strong>Dauer:</strong> {{ recipe.duration.value }} {{ recipe.duration.unit }}</p>
       </div>
     </div>
+
   }
-  </div >
+</div>
