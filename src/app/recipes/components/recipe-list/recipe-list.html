@@ -1,0 +1,26 @@
+<h2>Rezeptliste</h2>
+
+<div class="grid-container">
+  @for (recipe of recipes; track recipe.id) {
+    <div class="recipe">
+      <h3 class="recipe-header">
+        {{ recipe.name }}
+        <small>{{ recipe.difficulty }}</small>
+      </h3>
+
+      <div class="recipe-body">
+        <h4>Zutaten</h4>
+        <ul>
+          @for (ingredient of recipe.ingredients; track $index) {
+            <li>{{ ingredient.name }}</li>
+          }
+        </ul>
+      </div>
+
+      <div class="recipe-body">
+        <h4>Zubereitung</h4>
+        {{ recipe.preparation }}
+      </div>
+    </div>
+  }
+  </div >
