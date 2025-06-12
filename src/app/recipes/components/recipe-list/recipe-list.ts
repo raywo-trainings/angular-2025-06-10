@@ -1,5 +1,5 @@
-import {Component} from '@angular/core';
-import {recipes} from '../../data/recipe.dummy.data';
+import {Component, inject} from '@angular/core';
+import {Recipes} from '../../services/recipes';
 
 
 @Component({
@@ -10,6 +10,8 @@ import {recipes} from '../../data/recipe.dummy.data';
 })
 export class RecipeList {
 
-  protected recipes = recipes;
+  private readonly recipeService = inject(Recipes);
+
+  protected recipes = this.recipeService.getRecipes();
 
 }
