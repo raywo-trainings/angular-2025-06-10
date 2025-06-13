@@ -1,5 +1,6 @@
-import {Injectable} from '@angular/core';
-import {recipes} from '../data/recipe.dummy.data';
+import {inject, Injectable} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import {Observable} from 'rxjs';
 
 
 @Injectable({
@@ -7,15 +8,15 @@ import {recipes} from '../data/recipe.dummy.data';
 })
 export class Recipes {
 
-  private recipes = recipes;
+  private readonly http = inject(HttpClient);
 
-  public getRecipes() {
-    return this.recipes;
+  public getRecipes(): Observable<any[]> {
+    return this.http.get<any[]>("http://localhost:3000/recipes")
   }
 
   public getRecipeById(id: string) {
-    return this.recipes
-      .find(recipe => recipe.id === id);
+    // return this.recipes
+    //   .find(recipe => recipe.id === id);
   }
 
 }
