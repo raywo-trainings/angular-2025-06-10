@@ -34,4 +34,17 @@
     object-fit: contain;
     margin-right: 1rem;
   }
+
+  .hoverable-img-container {
+    --img-hover-transition: scale 0.4s ease-in-out;
+    scale: 1;
+    overflow-clip-margin: content-box;
+    overflow: clip;
+    transition: scale 0.4s ease-in-out;
+
+    img:hover {
+      transition: scale 0.4s ease-in-out;
+      scale: 1.2;
+    }
+  }
 }
