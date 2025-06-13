@@ -1,14 +1,14 @@
 import {Component, inject} from '@angular/core';
 import {Recipes} from '../../services/recipes';
-import {RouterLink} from '@angular/router';
 import {AsyncPipe} from '@angular/common';
+import {RecipeOverview} from '../recipe-overview/recipe-overview';
 
 
 @Component({
   selector: 'app-recipe-list',
   imports: [
-    RouterLink,
-    AsyncPipe
+    AsyncPipe,
+    RecipeOverview
   ],
   templateUrl: './recipe-list.html',
   styleUrl: './recipe-list.scss'
